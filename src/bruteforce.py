@@ -4,6 +4,7 @@ from threading import Thread
 from string import ascii_letters, digits
 from src.process import terminate_process
 from datetime import datetime, timedelta
+from time import sleep
 
 
 def generate_random_string(length: int=8):
@@ -55,6 +56,7 @@ def test_credentials(host: str, target_system:str):
     """
     if target_system == "RDP":
         system(f"START /B mstsc /v:{host} &")
+        sleep(10)
         terminate_process("mstsc.exe")
     return None
         
@@ -82,6 +84,6 @@ def bruteforce(host: str, system: str, max_runs: int, timeout: int=None):
         add_cmdkey(host, username, password)
         test_credentials(host, system)
         remove_cmdkey(host)
-        results.append((username, password))
+        results.append((datetime.now().strftime("%m/%d/%Y, %H:%M:%S"), username, password))
         i +=1
     return results
