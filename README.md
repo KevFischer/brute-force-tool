@@ -121,7 +121,7 @@ There are multiple option, some of them are required. Please take in mind that r
 |-t|--target|String|Hostname or IP-address of target devicce|Yes|
 |-r|--runs|Integer|Number of runs till program ends|Yes|
 |-s|--system|String|Describing name of system to try the bruteforce attack. E.g. RDP|Yes|
-|-o|-outfile|String|File where results should be safed in|No|
+|-o|--outfile|String|File where results should be safed in|No|
 |-timeout|None|Integer|Number in seconds the program is allowed to run|No|
 |-d|--delay|Float|Number of seconds the program is waiting between each attempt|No|
 
