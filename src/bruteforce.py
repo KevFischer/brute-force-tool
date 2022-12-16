@@ -54,10 +54,12 @@ def test_credentials(host: str, target_system: str, delay: float=0.3) -> None:
     Returns:
         (NoneType): No return value.
     """
+    system("cls")
     if target_system == "RDP":
         system(f"START /B mstsc /v:{host} &")
         sleep(delay)    # Delay required to ensure that login attempt is performed
         terminate_process("mstsc.exe")
+    system("cls")
     return None
         
         
