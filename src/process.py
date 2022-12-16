@@ -1,9 +1,7 @@
 from psutil import process_iter, Process
-from os import kill
-from signal import CTRL_C_EVENT
 
 
-def find_process(name: str):
+def find_process(name: str) -> int:
     """ Find a process.
 
     Args:
@@ -18,7 +16,7 @@ def find_process(name: str):
     return -1
 
 
-def terminate_process(name: str):
+def terminate_process(name: str) -> None:
     """Terminate a process by its name.
 
     Args:
